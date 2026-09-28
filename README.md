@@ -11,14 +11,17 @@ A from-scratch, C++ physically-based ray tracer built to simulate realistic ligh
     *   *Metal (Reflective):* Perfectly reflective or slightly fuzzy reflections.
     *   *Dielectric (Glass):* Refraction and reflection based on Snell's law and Schlick's approximation.
 *   **Lighting:** Point lights, directional lights, and soft shadows.
-*   **Anti-Aliasing:** Multisampled standard AA for smooth edges.
+*   **MIS:** Multiple Importance Sampling with Probability Distribution Functions for direct light sampling (shadow rays/Next Event Estimation)
+*   **Anti-Aliasing:** Multiple samples standard AA for smooth edges.
 *   **Camera:** Positionable virtual camera with adjustable Field of View (FOV) and Depth of Field (Defocus Blur).
-*   **Output:** Generates standard `.ppm` image files.
-*   **.obj File Loading:** Imports .obj files using simple OBJ loader
+*   **Output:** Generates standard `.ppm` image files, use ImageMagick to convert to other formats.
+*   **.obj File Loading:** Imports .obj files using simple OBJ loader, with valid normal mapping and uv mapping.
 *   **Multithreading:** Dynamically allocates different ray calculations to different threads
-*   **BVH:** Simple Binary BVH creation splitting along the longest-axis as well as accurate traversal.
+*   **BVH:** Simple Binary BVH creation using Binned SAH, with longest axis as a fallback.
+
 
 ## 🖼️ Gallery
+![CyMaTeapots](https://github.com/Thyra-S/Ray-Tracing/blob/master/Software%20Ray%20Tracer/Renders/cmglasstp.png?raw=true)
 ![Glass Teapot](https://github.com/Thyra-S/Ray-Tracing/blob/master/Software%20Ray%20Tracer/Renders/teapotcornell.png?raw=true)
 ![Nike of Samothrace Glass](https://github.com/Thyra-S/Ray-Tracing/blob/master/Software%20Ray%20Tracer/Renders/nikecornell.png?raw=true)
 ![Miku texture importing](https://github.com/Thyra-S/Ray-Tracing/blob/master/Software%20Ray%20Tracer/Renders/miku.png?raw=true)
